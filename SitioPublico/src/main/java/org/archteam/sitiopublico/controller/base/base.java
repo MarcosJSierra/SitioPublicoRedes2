@@ -27,6 +27,6 @@ public class base {
     
     @GetMapping("/ContactUs")
     public String pageContact(){
-        return "base/contactUs";
+        return "base/contact";
     }
 }
