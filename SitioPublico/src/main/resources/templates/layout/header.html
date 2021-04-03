@@ -4,15 +4,41 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns:th ="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head th:fragment="head">
+        <title>Sitio Web Publico</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
     </head>
     <body>
         <header th:fragment="header1">
-            esto es el header
+            <nav class="navbar navbar-expand-sm navbar-dark p-0" style="background-color: #320000">
+                <div class="container">
+                    <a th:href="@{/}" class="navbar-brand">
+                        <i class="fas fa-mug-hot"></i> Empresa de publicidad
+                    </a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item px-2">
+                                <a th:href="@{/}" class="nav-link active" th:text="Home"></a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a th:href="@{/about}" class="nav-link active">Acerca de nosotros</a>
+                            </li>
+                            <li class="nav-item px-2">
+                                <a th:href="@{/ContactUs}" class="nav-link active" th:text="Contactenos"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
     </body>
 </html>
